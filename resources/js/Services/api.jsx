@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { authAPI } from '@/Services/api'
 
 
 const api = axios.create({
@@ -62,16 +61,19 @@ export const ordersAPI = {
     getById: (id) => api.get(`/orders/${id}`),
     create: (data) => api.post('/orders', data),
     cancel: (id) => api.post(`/orders/${id}/cancel`),
-    updateStatus: (id, status) => api.post(`/orders/${id}/status`, { status }),
+   updateStatus: (id, status) =>
+    api.patch(`/orders/${id}/status`, { status }),
+
 };
 
-// Savings API
 export const savingsAPI = {
-    get: () => api.get('/savings'),
-    getTransactions: (params) => api.get('/savings/transactions', { params }),
-    deposit: (data) => api.post('/savings/deposit', data),
-    withdraw: (data) => api.post('/savings/withdraw', data),
+    get: () => api.get('/saving'),
+    getTransactions: (params) =>
+        api.get('/saving/transactions', { params }),
+    deposit: (data) => api.post('/saving/deposit', data),
+    withdraw: (data) => api.post('/saving/withdraw', data),
 };
+
 
 // Deposits API
 export const depositsAPI = {

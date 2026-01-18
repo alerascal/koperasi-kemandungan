@@ -1,7 +1,5 @@
-// ==============================================
-// resources/js/Components/Layout/Footer.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, router } from '@inertiajs/react';
 
 export default function Footer() {
     return (

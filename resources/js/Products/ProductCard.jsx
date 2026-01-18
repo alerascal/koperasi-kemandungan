@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@inertiajs/react';
 import { useCart } from '../../Context/CartContext';
 
 export default function ProductCard({ product }) {
